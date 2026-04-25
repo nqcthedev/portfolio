@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #080808;
+  --color-surface: #111111;
+  --color-surface-2: #1a1a1a;
+  --color-border: #242424;
+  --color-text: #f0f0f0;
+  --color-muted: #888888;
+  --color-cyan: #00d4ff;
+  --color-purple: #9333ea;
+  --color-green: #10b981;
+
+  --font-sans: var(--font-geist-sans), 'Inter', sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080808;
+    color: #f0f0f0;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@media (pointer: fine) {
+  * { cursor: none !important; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #00d4ff; }
+
+/* Selection */
+::selection {
+  background: rgba(0, 212, 255, 0.2);
+  color: #00d4ff;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #9333ea 50%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text * {
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-cyan {
+  background: linear-gradient(135deg, #00d4ff, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Grid dot pattern */
+.grid-dots {
+  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Aurora background */
+.aurora-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 60%, rgba(0, 212, 255, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 20%, rgba(147, 51, 234, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 60% 90%, rgba(16, 185, 129, 0.05) 0%, transparent 60%),
+    #080808;
+}
+
+/* Glow effects */
+.glow-cyan { box-shadow: 0 0 24px rgba(0, 212, 255, 0.2); }
+.glow-purple { box-shadow: 0 0 24px rgba(147, 51, 234, 0.2); }
+.glow-green { box-shadow: 0 0 24px rgba(16, 185, 129, 0.2); }
+
+/* Blink animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.blink { animation: blink 2s ease-in-out infinite; }
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+/* Marquee animation */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-duration: var(--marquee-duration, 40s);
+}
+.animate-marquee-reverse {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-duration: var(--marquee-duration, 40s);
+}
+
+/* Shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Section label */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #00d4ff;
+}
+
+/* Noise texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 9999;
+}
