@@ -27,8 +27,8 @@ const LINKS = [
   {
     icon: LinkedinIcon,
     label: "LinkedIn",
-    value: "linkedin.com/in/nguyen-quoc-cuong",
-    href: "https://linkedin.com/in/nguyen-quoc-cuong",
+    value: "linkedin.com/in/nqcthedev",
+    href: "https://linkedin.com/nqcthedev",
     color: "#0ea5e9",
     copyable: false,
   },

@@ -16,7 +16,7 @@ const ROLES = [
 
 const SOCIAL = [
   { icon: GithubIcon, href: "https://github.com/nqcthedev", label: "GitHub" },
-  { icon: LinkedinIcon, href: "https://linkedin.com/in/nguyen-quoc-cuong", label: "LinkedIn" },
+  { icon: LinkedinIcon, href: "https://linkedin.com/in/nqcthedev", label: "LinkedIn" },
   { icon: Mail, href: "mailto:nqcthedev@gmail.com", label: "Email" },
 ];
 

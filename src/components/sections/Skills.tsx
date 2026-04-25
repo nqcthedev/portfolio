@@ -16,45 +16,45 @@ const CATEGORIES: {
   colSpan?: string;
   rowSpan?: string;
 }[] = [
-  {
-    key: "expert",
-    title: "Expert",
-    emoji: "⚡",
-    color: "#00d4ff",
-    colSpan: "lg:col-span-2",
-  },
-  {
-    key: "aiNative",
-    title: "AI-Native Dev",
-    emoji: "🤖",
-    color: "#9333ea",
-  },
-  {
-    key: "proficient",
-    title: "Proficient",
-    emoji: "🛠",
-    color: "#10b981",
-    colSpan: "lg:col-span-2",
-  },
-  {
-    key: "devops",
-    title: "DevOps & Cloud",
-    emoji: "☁️",
-    color: "#f59e0b",
-  },
-  {
-    key: "specialized",
-    title: "Specialized",
-    emoji: "🔑",
-    color: "#ec4899",
-  },
-  {
-    key: "learning",
-    title: "Learning Now",
-    emoji: "📚",
-    color: "#6366f1",
-  },
-];
+    {
+      key: "expert",
+      title: "Expert",
+      emoji: "⚡",
+      color: "#00d4ff",
+      colSpan: "lg:col-span-2",
+    },
+    {
+      key: "aiNative",
+      title: "AI-Native Dev",
+      emoji: "🤖",
+      color: "#9333ea",
+    },
+    {
+      key: "proficient",
+      title: "Proficient",
+      emoji: "🛠",
+      color: "#10b981",
+      colSpan: "lg:col-span-2",
+    },
+    {
+      key: "devops",
+      title: "DevOps & Cloud",
+      emoji: "☁️",
+      color: "#f59e0b",
+    },
+    {
+      key: "specialized",
+      title: "Specialized",
+      emoji: "🔑",
+      color: "#ec4899",
+    },
+    {
+      key: "learning",
+      title: "Learning Now",
+      emoji: "📚",
+      color: "#6366f1",
+    },
+  ];
 
 function SkillPill({
   skill,
