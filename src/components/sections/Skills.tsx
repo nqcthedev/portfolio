@@ -16,45 +16,54 @@ const CATEGORIES: {
   colSpan?: string;
   rowSpan?: string;
 }[] = [
-    {
-      key: "expert",
-      title: "Expert",
-      emoji: "⚡",
-      color: "#00d4ff",
-      colSpan: "lg:col-span-2",
-    },
-    {
-      key: "aiNative",
-      title: "AI-Native Dev",
-      emoji: "🤖",
-      color: "#9333ea",
-    },
-    {
-      key: "proficient",
-      title: "Proficient",
-      emoji: "🛠",
-      color: "#10b981",
-      colSpan: "lg:col-span-2",
-    },
-    {
-      key: "devops",
-      title: "DevOps & Cloud",
-      emoji: "☁️",
-      color: "#f59e0b",
-    },
-    {
-      key: "specialized",
-      title: "Specialized",
-      emoji: "🔑",
-      color: "#ec4899",
-    },
-    {
-      key: "learning",
-      title: "Learning Now",
-      emoji: "📚",
-      color: "#6366f1",
-    },
-  ];
+  {
+    key: "expert",
+    title: "Expert",
+    emoji: "EX",
+    color: "#00d4ff",
+    colSpan: "lg:col-span-2",
+  },
+  {
+    key: "aiNative",
+    title: "AI-Native Dev",
+    emoji: "AI",
+    color: "#9333ea",
+  },
+  {
+    key: "proficient",
+    title: "Proficient",
+    emoji: "PR",
+    color: "#10b981",
+    colSpan: "lg:col-span-2",
+  },
+  {
+    key: "devops",
+    title: "DevOps & Cloud",
+    emoji: "CL",
+    color: "#f59e0b",
+  },
+  {
+    key: "specialized",
+    title: "Specialized",
+    emoji: "SE",
+    color: "#ec4899",
+  },
+  {
+    key: "learning",
+    title: "Learning Now",
+    emoji: "LN",
+    color: "#6366f1",
+  },
+];
+
+const CATEGORY_MODE_MATCH: Record<SkillCategoryKey, string> = {
+  expert: "recruiter builder",
+  proficient: "recruiter builder",
+  devops: "builder",
+  specialized: "builder creator",
+  aiNative: "builder",
+  learning: "builder",
+};
 
 function SkillPill({
   skill,
@@ -71,7 +80,7 @@ function SkillPill({
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay }}
-      className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium border transition-all duration-200 hover:scale-105 cursor-default"
+      className="inline-flex cursor-default items-center rounded-md border px-3 py-1.5 text-xs font-medium transition-all duration-200 hover:scale-105"
       style={{
         borderColor: `${color}30`,
         color: `${color}cc`,
@@ -104,15 +113,13 @@ function BentoCard({
         delay: index * 0.07,
         ease: EASE,
       }}
-      className={[
-        "group relative p-5 rounded-2xl border border-white/[0.06] bg-[#111111]",
-        "hover:border-white/[0.12] transition-all duration-300 overflow-hidden",
-        category.colSpan === "lg:col-span-2" ? "lg:col-span-2" : "",
-      ].join(" ")}
+      className="capability-node future-panel corner-lock group relative rounded-lg p-5 transition-all duration-300 hover:border-[#00d4ff]/25"
+      style={{ ["--accent" as string]: category.color, ["--node-index" as string]: index }}
+      data-mode-match={CATEGORY_MODE_MATCH[category.key]}
     >
       {/* Glow on hover */}
       <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         style={{
           background: `radial-gradient(ellipse at top left, ${category.color}08 0%, transparent 60%)`,
         }}
@@ -120,7 +127,12 @@ function BentoCard({
 
       {/* Header */}
       <div className="flex items-center gap-2 mb-4">
-        <span className="text-base">{category.emoji}</span>
+        <span
+          className="metric-cell rounded px-1.5 py-0.5 font-mono text-[10px]"
+          style={{ color: category.color }}
+        >
+          {category.emoji}
+        </span>
         <span
           className="text-xs font-bold uppercase tracking-wider"
           style={{ color: category.color }}
@@ -152,8 +164,8 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-28 relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="skills" className="future-section relative py-28">
+      <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
           ref={ref}
@@ -169,10 +181,10 @@ export default function Skills() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: EASE }}
-              className="text-3xl sm:text-4xl font-black tracking-tight"
+              className="text-3xl font-black sm:text-4xl"
             >
-              Technical{" "}
-              <span className="gradient-cyan">Arsenal</span>
+              Capability{" "}
+              <span className="quantum-text">Matrix</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
@@ -206,11 +218,47 @@ export default function Skills() {
           />
         </motion.div>
 
-        {/* Bento grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {CATEGORIES.map((cat, i) => (
-            <BentoCard key={cat.key} category={cat} index={i} />
-          ))}
+        <div className="capability-constellation">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: EASE }}
+            className="capability-core future-panel corner-lock rounded-lg p-6"
+            data-mode-match="recruiter builder"
+          >
+            <div className="relative z-10">
+              <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-[#00d4ff]/70">
+                Stack evidence core
+              </p>
+              <h3 className="mb-4 text-2xl font-black text-white/90">
+                Evidence-based stack, not score labels.
+              </h3>
+              <div className="space-y-2.5">
+                {[
+                  ["Frontend", "React, Next.js App Router, TypeScript", "#00d4ff"],
+                  ["API layer", "Redux Toolkit, RTK Query, RESTful APIs", "#10b981"],
+                  ["Backend", "Node.js, Express.js, MongoDB", "#f59e0b"],
+                  ["Product ops", "SEO, Search Console, content analytics", "#ec4899"],
+                ].map(([label, value, color]) => (
+                  <div key={label} className="metric-cell rounded-lg p-3">
+                    <div className="mb-1 font-mono text-[10px] uppercase tracking-widest" style={{ color }}>
+                      {label}
+                    </div>
+                    <div className="text-sm leading-relaxed text-white/58">
+                      {value}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          <div className="capability-node-grid">
+            {CATEGORIES.map((cat, i) => (
+              <BentoCard key={cat.key} category={cat} index={i} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

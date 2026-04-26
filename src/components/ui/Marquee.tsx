@@ -18,11 +18,11 @@ export function Marquee({ items, speed = 40, className, reverse = false, color =
       {/* Edge fade masks */}
       <div
         className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to right, #080808, transparent)" }}
+        style={{ background: "linear-gradient(to right, #03060a, transparent)" }}
       />
       <div
         className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none"
-        style={{ background: "linear-gradient(to left, #080808, transparent)" }}
+        style={{ background: "linear-gradient(to left, #03060a, transparent)" }}
       />
 
       <div

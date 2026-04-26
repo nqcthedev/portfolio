@@ -19,32 +19,28 @@ function ExperienceCard({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, x: -20 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
         duration: 0.6,
         delay: index * 0.1,
         ease: EASE,
       }}
-      className="group relative pl-8"
+      className="mission-card-wrap group relative"
+      style={{ ["--accent" as string]: exp.color, ["--mission-index" as string]: index }}
     >
-      {/* Timeline dot */}
-      <div
-        className="absolute left-0 top-1 w-3 h-3 rounded-full border-2 border-[#1a1a1a] transition-all duration-300 group-hover:scale-125"
-        style={{ background: exp.color }}
-      />
-
-      {/* Card */}
-      <div className="relative p-6 rounded-2xl border border-white/[0.06] bg-[#111111] hover:border-white/[0.12] transition-all duration-300 overflow-hidden">
-        {/* Glow */}
+      <div className="mission-card future-panel corner-lock relative rounded-lg p-6 transition-all duration-300 hover:border-[#00d4ff]/25" data-mode-match="builder recruiter">
         <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           style={{
             background: `radial-gradient(ellipse at top left, ${exp.color}06 0%, transparent 60%)`,
           }}
         />
 
-        {/* Header */}
+        <div className="mission-index font-mono text-[10px] uppercase tracking-widest" style={{ color: exp.color }}>
+          Mission 0{index + 1}
+        </div>
+
         <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -76,7 +72,6 @@ function ExperienceCard({
         {/* Description */}
         <p className="text-sm text-white/35 mb-4">{exp.description}</p>
 
-        {/* Highlights */}
         <ul className="space-y-1.5 mb-5">
           {exp.highlights.map((item) => (
             <li key={item} className="flex items-start gap-2 text-sm text-white/50">
@@ -89,7 +84,6 @@ function ExperienceCard({
           ))}
         </ul>
 
-        {/* Stack */}
         <div className="flex flex-wrap gap-1.5">
           {exp.stack.map((tech) => (
             <span
@@ -115,8 +109,8 @@ export default function Experience() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="py-28 relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="experience" className="future-section relative py-28">
+      <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div ref={ref}>
           <motion.div
@@ -133,43 +127,42 @@ export default function Experience() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: EASE }}
-              className="text-3xl sm:text-4xl font-black tracking-tight"
+              className="text-3xl font-black sm:text-4xl"
             >
-              Work{" "}
-              <span className="gradient-cyan">History</span>
+              Build{" "}
+              <span className="quantum-text">Timeline</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.2 }}
-              className="text-sm text-white/30"
+              className="signal-chip rounded-full px-3 py-1 text-sm text-white/45"
             >
               Dec 2021 – Sep 2024
             </motion.p>
           </div>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-[5px] top-2 bottom-0 w-px bg-gradient-to-b from-white/10 via-white/[0.04] to-transparent" />
+        <div className="mission-track relative">
+          <div className="mission-track-line" />
 
-          <div className="space-y-6">
+          <div className="mission-grid">
             {EXPERIENCES.map((exp, i) => (
               <ExperienceCard key={exp.company} exp={exp} index={i} />
             ))}
           </div>
 
-          {/* Freelance card */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: 0.3, ease: EASE }}
-            className="relative pl-8 mt-6"
+            className="mission-card-wrap mission-card-wrap-wide relative mt-4"
           >
-            <div className="absolute left-0 top-1 w-3 h-3 rounded-full border-2 border-[#1a1a1a] bg-[#6366f1]" />
-            <div className="p-5 rounded-2xl border border-[#6366f1]/15 bg-[#111111]">
+            <div className="mission-card future-panel rounded-lg border-[#6366f1]/15 p-5" data-mode-match="builder creator">
+              <div className="mission-index font-mono text-[10px] uppercase tracking-widest text-[#6366f1]">
+                Side orbit
+              </div>
               <div className="flex flex-wrap items-start justify-between gap-3 mb-2">
                 <div>
                   <span className="text-xs font-bold text-[#6366f1]/80 uppercase tracking-wider">
@@ -182,7 +175,7 @@ export default function Experience() {
                 <span className="font-mono text-xs text-white/25">Oct 2023 – Dec 2024</span>
               </div>
               <p className="text-xs text-white/35 mb-3">
-                Next.js 14 + Node.js + MongoDB · 10k+ monthly visitors · 10 Google page-1 keywords · ~30% organic traffic improvement
+                Next.js 14 + Node.js + MongoDB · 10k+ monthly visitors · 10 Google page-1 keywords · organic traffic improvement
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {["Next.js 14", "Node.js", "MongoDB", "SEO", "Search Console"].map((t) => (

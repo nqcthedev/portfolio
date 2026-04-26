@@ -28,7 +28,7 @@ const LINKS = [
     icon: LinkedinIcon,
     label: "LinkedIn",
     value: "linkedin.com/in/nqcthedev",
-    href: "https://linkedin.com/nqcthedev",
+    href: "https://linkedin.com/in/nqcthedev",
     color: "#0ea5e9",
     copyable: false,
   },
@@ -69,7 +69,8 @@ function ContactLink({
         delay: index * 0.08,
         ease: EASE,
       }}
-      className="group flex items-center justify-between p-4 rounded-xl border border-white/[0.06] bg-[#111111] hover:border-white/[0.12] transition-all duration-200"
+      className="endpoint-card future-panel group flex items-center justify-between rounded-lg p-4 transition-all duration-200 hover:border-[#00d4ff]/25"
+      style={{ ["--accent" as string]: item.color }}
     >
       <a
         href={item.href}
@@ -78,7 +79,7 @@ function ContactLink({
         className="flex items-center gap-3 flex-1 min-w-0"
       >
         <div
-          className="flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0"
+          className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md"
           style={{ background: `${item.color}15`, color: item.color }}
         >
           <Icon size={16} />
@@ -113,11 +114,12 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="py-28 relative">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-xl mx-auto">
+    <section id="contact" className="future-section relative py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="transmission-console future-panel corner-lock rounded-lg p-6 sm:p-8" data-mode-match="recruiter">
           {/* Header */}
-          <div ref={ref}>
+          <div ref={ref} className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
@@ -131,10 +133,10 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: EASE }}
-              className="text-3xl sm:text-4xl font-black tracking-tight mb-4"
+              className="mb-4 text-3xl font-black sm:text-4xl"
             >
-              Let&apos;s Build{" "}
-              <span className="gradient-cyan">Together</span>
+              Open{" "}
+              <span className="quantum-text">Transmission</span>
             </motion.h2>
 
             <motion.p
@@ -147,29 +149,37 @@ export default function Contact() {
               projects. If you have something worth building, I&apos;d love to hear
               about it.
             </motion.p>
-          </div>
 
-          {/* Links */}
-          <div className="space-y-2.5 mb-8">
-            {LINKS.map((item, i) => (
-              <ContactLink key={item.label} item={item} index={i} />
-            ))}
-          </div>
+            <motion.a
+              href="mailto:nqcthedev@gmail.com"
+              initial={{ opacity: 0, y: 10 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#00d4ff] px-6 py-3.5 text-sm font-bold text-[#03060a] glow-cyan transition-all hover:bg-[#10b981]"
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <Mail size={15} />
+              Send me an email
+            </motion.a>
+            </div>
 
-          {/* Primary CTA */}
-          <motion.a
-            href="mailto:nqcthedev@gmail.com"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center justify-center gap-2 w-full px-6 py-3.5 rounded-xl bg-[#00d4ff] text-[#080808] font-bold text-sm hover:bg-[#00d4ff]/90 transition-all glow-cyan"
-            whileHover={{ scale: 1.01 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <Mail size={15} />
-            Send me an email
-          </motion.a>
+            <div>
+              <div className="contact-beacon mb-4 rounded-lg">
+                <div className="contact-beacon-core">
+                  <Mail size={20} />
+                </div>
+                <span className="contact-beacon-ping contact-beacon-ping-one" />
+                <span className="contact-beacon-ping contact-beacon-ping-two" />
+              </div>
+
+              <div className="endpoint-grid">
+                {LINKS.map((item, i) => (
+                  <ContactLink key={item.label} item={item} index={i} />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

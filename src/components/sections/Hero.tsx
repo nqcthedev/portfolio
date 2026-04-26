@@ -2,22 +2,62 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, type Variants } from "framer-motion";
-import { ArrowDown, Mail, ExternalLink, Download } from "lucide-react";
+import {
+  Activity,
+  ArrowDown,
+  BrainCircuit,
+  CircuitBoard,
+  Download,
+  ExternalLink,
+  Fingerprint,
+  Gauge,
+  Mail,
+  Radio,
+  Satellite,
+  ScanLine,
+  ShieldCheck,
+  Sparkles,
+  Terminal,
+} from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { AnimatedText } from "@/components/ui/AnimatedText";
+import { FutureCanvas } from "@/components/ui/FutureCanvas";
+import { PortfolioModeSwitch } from "@/components/ui/PortfolioModeSwitch";
 import { EASE } from "@/lib/utils";
 
 const ROLES = [
   "Fullstack JavaScript Developer",
-  "React / Next.js Specialist",
-  "Node.js Backend Engineer",
-  "AI-Native Developer",
+  "React / Next.js Developer",
+  "Frontend Engineer with Node.js",
+  "Product-minded Web Developer",
 ];
 
 const SOCIAL = [
   { icon: GithubIcon, href: "https://github.com/nqcthedev", label: "GitHub" },
   { icon: LinkedinIcon, href: "https://linkedin.com/in/nqcthedev", label: "LinkedIn" },
   { icon: Mail, href: "mailto:nqcthedev@gmail.com", label: "Email" },
+];
+
+const TELEMETRY = [
+  { label: "Frontend", value: "React / Next", icon: Gauge, color: "#00d4ff" },
+  { label: "Backend", value: "Node / Mongo", icon: Radio, color: "#10b981" },
+  { label: "Product signal", value: "1.8M subs", icon: BrainCircuit, color: "#f59e0b" },
+];
+
+const STACK_MODULES = [
+  { label: "Frontend", value: "React, Next.js, TypeScript", color: "#00d4ff" },
+  { label: "State / API", value: "Redux Toolkit, RTK Query, REST", color: "#10b981" },
+  { label: "Backend", value: "Node.js, Express.js, MongoDB", color: "#f59e0b" },
+  { label: "Specialized", value: "Web3.js, Ethers.js, Socket.io", color: "#ec4899" },
+];
+
+const PROTOCOLS = ["Ship", "Measure", "Automate", "Scale"];
+
+const MEMORY_STREAM = [
+  "React / Next.js",
+  "Node / MongoDB",
+  "Web3 / Socket.io",
+  "Firebase / Vercel",
 ];
 
 function TypewriterText({ texts }: { texts: string[] }) {
@@ -74,216 +114,254 @@ export default function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center bg-[#080808]"
+      className="future-shell relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
       style={{ overflow: "clip" }}
     >
-      {/* Layer 1 — grid dots */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      />
+      <div className="future-horizon" />
+      <FutureCanvas />
+      <div className="chrono-rail chrono-rail-left hidden xl:block" />
+      <div className="chrono-rail chrono-rail-right hidden xl:block" />
 
-      {/* Layer 2 — aurora gradients */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 20% 60%, rgba(0,212,255,0.08) 0%, transparent 60%), " +
-            "radial-gradient(ellipse 60% 80% at 80% 20%, rgba(147,51,234,0.08) 0%, transparent 60%), " +
-            "radial-gradient(ellipse 50% 60% at 60% 90%, rgba(16,185,129,0.05) 0%, transparent 60%)",
-        }}
-      />
-
-      {/* Layer 3 — radial vignette at edges */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse 90% 90% at 50% 50%, transparent 40%, #080808 100%)",
-        }}
-      />
-
-      {/* Floating orbs */}
-      <div
-        className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(0,212,255,0.05) 0%, transparent 70%)",
-          filter: "blur(40px)",
-          animation: "float 7s ease-in-out infinite",
-        }}
-      />
-      <div
-        className="absolute bottom-1/3 right-[20%] w-80 h-80 rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(147,51,234,0.05) 0%, transparent 70%)",
-          filter: "blur(40px)",
-          animation: "float 9s ease-in-out infinite reverse",
-        }}
-      />
+      <div className="absolute inset-x-6 top-24 z-10 hidden items-center justify-between font-mono text-[10px] uppercase tracking-[0.28em] text-white/25 md:flex">
+        <span className="flex items-center gap-2">
+          <Satellite size={13} className="text-[#00d4ff]/70" />
+          Saigon uplink
+        </span>
+        <span className="flex items-center gap-2">
+          <ScanLine size={13} className="text-[#10b981]/70" />
+          NQC stack // React + Next.js
+        </span>
+        <span className="flex items-center gap-2">
+          <Activity size={13} className="text-[#f59e0b]/70" />
+          Signal stable
+        </span>
+      </div>
 
       {/* Parallax content wrapper */}
-      <motion.div
-        style={{ y, opacity }}
-        className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-16 w-full"
-      >
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col items-center text-center"
+          style={{ y, opacity }}
+          className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-14 pt-24 sm:px-6 sm:pb-24 sm:pt-32"
         >
-          {/* Available badge */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#10b981]/30 bg-[#10b981]/5 text-xs font-medium text-[#10b981] tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] blink" />
-              Available for new opportunities
-            </span>
-          </motion.div>
-
-          {/* Name — character animation */}
-          <motion.div variants={itemVariants} className="mb-4">
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none">
-              <span className="block text-white/90">
-                <AnimatedText text="Nguyen" by="char" delay={0} />
-              </span>
-              <span className="block gradient-text">
-                <AnimatedText text="Quoc Cuong" by="char" delay={0.2} />
-              </span>
-            </h1>
-          </motion.div>
-
-          {/* Typewriter role */}
-          <motion.div variants={itemVariants} className="mb-8 h-8 flex items-center">
-            <p className="text-lg sm:text-xl font-medium text-white/40">
-              <TypewriterText texts={ROLES} />
-            </p>
-          </motion.div>
-
-          {/* Description */}
-          <motion.p
+        <motion.div
+	          variants={containerVariants}
+	          initial="hidden"
+	          animate="visible"
+	          className="grid min-w-0 items-center gap-5 lg:grid-cols-[0.82fr_1.65fr_0.9fr]"
+	        >
+          <motion.aside
             variants={itemVariants}
-            className="max-w-xl text-base text-white/40 leading-relaxed mb-10"
+            className="future-panel corner-lock hidden rounded-lg p-5 lg:block"
           >
-            3 years shipping production web apps in{" "}
-            <span className="text-white/70">blockchain</span>,{" "}
-            <span className="text-white/70">real-estate</span> &{" "}
-            <span className="text-white/70">B2B SaaS</span>. Previously built{" "}
-            <span className="text-[#f59e0b]/80">3 YouTube channels</span> from zero to{" "}
-            <span className="text-white/70 font-semibold">1.8M+ subscribers</span> combined.
-          </motion.p>
+            <div className="relative z-10">
+              <div className="mb-7 flex items-center justify-between">
+                <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-white/35">
+                  <CircuitBoard size={13} className="text-[#00d4ff]/70" />
+                  Tech profile
+                </span>
+                <span className="signal-chip rounded-full px-2 py-1 font-mono text-[10px] text-[#10b981]">
+                  LIVE
+                </span>
+              </div>
 
-          {/* CTA buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap items-center justify-center gap-3 mb-12"
-          >
-            <motion.a
-              href="#projects"
-              onClick={(e) => { e.preventDefault(); document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="group flex items-center gap-2 px-6 py-3 rounded-xl bg-[#00d4ff] text-[#080808] font-semibold text-sm hover:bg-[#00d4ff]/90 transition-all duration-200 glow-cyan"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              View Projects
-              <ExternalLink size={14} className="group-hover:translate-x-0.5 transition-transform" />
-            </motion.a>
-            <motion.a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="flex items-center gap-2 px-6 py-3 rounded-xl border border-white/10 text-white/70 font-semibold text-sm hover:border-white/20 hover:text-white hover:bg-white/[0.04] transition-all duration-200"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Contact Me
-            </motion.a>
-            <motion.a
-              href="/cv-nguyen-quoc-cuong.pdf"
-              download
-              className="flex items-center gap-2 px-5 py-3 rounded-xl border border-white/[0.07] text-white/40 font-medium text-sm hover:border-white/15 hover:text-white/60 hover:bg-white/[0.03] transition-all duration-200"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <Download size={13} />
-              CV
-            </motion.a>
-          </motion.div>
+              <div className="data-portrait mb-5">
+                <div className="data-portrait-core">
+                  <Fingerprint size={36} className="text-[#00d4ff]/80" />
+                </div>
+                <div className="data-portrait-grid">
+                  {[30, 54, 40, 78, 62, 92, 46, 70, 36, 84].map((height, i) => (
+                    <span
+                      key={`${height}-${i}`}
+                      className="bg-[#00d4ff]/70"
+                      style={{ height }}
+                    />
+                  ))}
+                </div>
+              </div>
 
-          {/* Social links */}
-          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-16">
-            {SOCIAL.map(({ icon: Icon, href, label }) => (
+              <div className="space-y-3">
+                {STACK_MODULES.map((item) => (
+                  <div key={item.label} className="metric-cell rounded-lg p-3">
+                    <div className="mb-1 font-mono text-[10px] uppercase tracking-widest" style={{ color: item.color }}>
+                      {item.label}
+                    </div>
+                    <div className="text-xs font-medium leading-relaxed text-white/62">
+                      {item.value}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.aside>
+
+	          <div className="relative min-w-0 text-center">
+            <motion.div variants={itemVariants} className="mb-5 sm:mb-7">
+              <span className="signal-chip inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-[#10b981]">
+                <ShieldCheck size={13} />
+                Open to React / Next.js fullstack roles
+              </span>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="identity-core mb-5 sm:mb-6">
+              <div className="chrono-ring" />
+              <div className="chrono-ring chrono-ring-secondary" />
+              <div className="relative z-10">
+	                <p className="mx-auto mb-3 max-w-full px-1 font-mono text-[10px] uppercase leading-relaxed tracking-[0.28em] text-[#00d4ff]/70 sm:mb-4 sm:text-xs">
+	                  React / Next.js · TypeScript · Node.js · MongoDB
+	                </p>
+	                <h1 className="text-5xl font-black leading-none sm:text-7xl lg:text-7xl xl:text-8xl">
+	                  <span className="block max-w-full whitespace-nowrap text-white/90">
+	                    <AnimatedText text="Nguyen" by="char" delay={0} />
+	                  </span>
+	                  <span className="block max-w-full whitespace-nowrap quantum-text">
+	                    <AnimatedText text="Quoc Cuong" by="char" delay={0.2} />
+	                  </span>
+                </h1>
+              </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mb-5 flex h-8 items-center justify-center sm:mb-7">
+              <p className="text-lg font-medium text-white/50 sm:text-xl">
+                <TypewriterText texts={ROLES} />
+              </p>
+            </motion.div>
+
+            <motion.p
+              variants={itemVariants}
+              className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-white/50"
+            >
+              Fullstack JavaScript Developer shipping production web apps with{" "}
+              <span className="text-white/78">React, Next.js, TypeScript</span>,{" "}
+              <span className="text-white/78">Node.js, Express, MongoDB</span>, plus Web3
+              and real-time interfaces. Also built YouTube channels from zero to{" "}
+              <span className="font-semibold text-[#f59e0b]">1.8M subscribers</span>,
+              bringing real product analytics back into frontend work.
+            </motion.p>
+
+	            <motion.div
+	              variants={itemVariants}
+	              className="mx-auto mb-6 flex max-w-sm flex-wrap items-center justify-center gap-3 sm:mb-9 sm:max-w-none"
+	            >
               <motion.a
-                key={label}
-                href={href}
-                target={href.startsWith("http") ? "_blank" : undefined}
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="flex items-center justify-center w-10 h-10 rounded-xl border border-white/[0.08] text-white/40 hover:text-white hover:border-white/20 hover:bg-white/[0.04] transition-all duration-200"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.95 }}
+                href="#projects"
+                onClick={(e) => { e.preventDefault(); document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" }); }}
+	                className="group flex w-40 items-center justify-center gap-2 rounded-lg bg-[#00d4ff] px-6 py-3 text-sm font-bold text-[#03060a] glow-cyan transition-all duration-200 hover:bg-[#10b981] sm:w-auto"
+                data-mode-match="builder"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
-                <Icon size={16} />
+                View Work
+                <ExternalLink size={14} className="transition-transform group-hover:translate-x-0.5" />
               </motion.a>
-            ))}
-          </motion.div>
-
-          {/* Quick stat badges */}
-          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-3">
-            {[
-              { label: "3+ Years Dev", color: "#00d4ff" },
-              { label: "1.8M+ YT Subs", color: "#f59e0b" },
-              { label: "1.65B+ Views", color: "#9333ea" },
-              { label: "React / Next.js", color: "#10b981" },
-            ].map((badge) => (
-              <span
-                key={badge.label}
-                className="px-3 py-1 rounded-full text-xs font-medium border"
-                style={{
-                  borderColor: `${badge.color}30`,
-                  color: badge.color,
-                  background: `${badge.color}08`,
-                }}
+              <motion.a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
+	                className="future-panel flex w-40 items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold text-white/75 transition-all duration-200 hover:text-white sm:w-auto"
+                data-mode-match="recruiter"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
               >
-                {badge.label}
-              </span>
-            ))}
-          </motion.div>
-        </motion.div>
-      </motion.div>
+                <Mail size={14} />
+                Contact
+              </motion.a>
+              <motion.a
+                href="/cv-nguyen-quoc-cuong.pdf"
+                download
+	                className="flex w-28 items-center justify-center gap-2 rounded-lg border border-white/[0.08] px-5 py-3 text-sm font-medium text-white/45 transition-all duration-200 hover:border-[#f59e0b]/40 hover:text-white/75 sm:w-auto"
+                data-mode-match="recruiter"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                <Download size={13} />
+                CV
+              </motion.a>
+            </motion.div>
 
-      {/* Floating terminal card */}
-      <motion.div
-        initial={{ opacity: 0, x: 40, y: 20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ delay: 1.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute right-6 top-1/2 -translate-y-1/2 hidden xl:block pointer-events-none"
-        style={{ animation: "float 6s ease-in-out infinite", animationDelay: "1.4s" }}
-      >
-        <div
-          className="w-64 rounded-2xl border border-white/[0.07] overflow-hidden"
-          style={{ background: "rgba(17,17,17,0.85)", backdropFilter: "blur(20px)" }}
-        >
-          {/* Window chrome */}
-          <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/[0.05]">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
-            <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
-            <div className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
-            <span className="ml-2 text-[10px] font-mono text-white/20">nqc.config.ts</span>
+            <motion.div variants={itemVariants} className="mx-auto mb-6 max-w-2xl sm:mb-8">
+              <PortfolioModeSwitch />
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mb-6 flex items-center justify-center gap-4 sm:mb-10">
+              {SOCIAL.map(({ icon: Icon, href, label }) => (
+                <motion.a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="future-panel flex h-10 w-10 items-center justify-center rounded-lg text-white/45 transition-all duration-200 hover:text-white"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Icon size={16} />
+                </motion.a>
+              ))}
+            </motion.div>
+
+            <motion.div variants={itemVariants} className="mx-auto hidden max-w-2xl grid-cols-4 gap-2 sm:grid">
+              {PROTOCOLS.map((protocol, index) => (
+                <span
+                  key={protocol}
+                  className="metric-cell rounded-lg px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-white/45"
+                >
+                  <span className="mr-2 text-white/20">0{index + 1}</span>
+                  {protocol}
+                </span>
+              ))}
+            </motion.div>
+
+            <motion.div
+              variants={itemVariants}
+              className="mx-auto mt-3 hidden max-w-2xl items-center justify-center gap-2 lg:flex"
+            >
+              {MEMORY_STREAM.map((item) => (
+                <span
+                  key={item}
+                  className="future-memory-node rounded-full px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/32"
+                >
+                  {item}
+                </span>
+              ))}
+            </motion.div>
           </div>
-          {/* Code */}
-          <div className="p-4 font-mono text-[11px] leading-relaxed">
-            <p><span className="text-[#9333ea]">const</span> <span className="text-[#00d4ff]">dev</span> <span className="text-white/40">=</span> <span className="text-white/60">{"{"}</span></p>
-            <p className="pl-3"><span className="text-[#10b981]">name</span><span className="text-white/40">:</span> <span className="text-[#f59e0b]">&quot;Quoc Cuong&quot;</span><span className="text-white/40">,</span></p>
-            <p className="pl-3"><span className="text-[#10b981]">stack</span><span className="text-white/40">:</span> <span className="text-white/60">[</span></p>
-            <p className="pl-6"><span className="text-[#f59e0b]">&quot;React&quot;</span><span className="text-white/40">,</span> <span className="text-[#f59e0b]">&quot;Next.js&quot;</span><span className="text-white/40">,</span></p>
-            <p className="pl-6"><span className="text-[#f59e0b]">&quot;TypeScript&quot;</span><span className="text-white/40">,</span></p>
-            <p className="pl-3"><span className="text-white/60">]</span><span className="text-white/40">,</span></p>
-            <p className="pl-3"><span className="text-[#10b981]">exp</span><span className="text-white/40">:</span> <span className="text-[#9333ea]">3</span><span className="text-white/40">,</span></p>
-            <p className="pl-3"><span className="text-[#10b981]">open</span><span className="text-white/40">:</span> <span className="text-[#9333ea]">true</span></p>
-            <p><span className="text-white/60">{"}"}</span></p>
-          </div>
-        </div>
+
+          <motion.aside
+            variants={itemVariants}
+            className="future-panel corner-lock hidden rounded-lg p-5 lg:block"
+          >
+            <div className="relative z-10">
+              <div className="mb-5 flex items-center gap-2">
+                <Sparkles size={14} className="text-[#f59e0b]" />
+                <span className="font-mono text-[10px] uppercase tracking-widest text-white/35">
+                  Live telemetry
+                </span>
+              </div>
+              <div className="space-y-3">
+                {TELEMETRY.map(({ label, value, icon: Icon, color }) => (
+                  <div key={label} className="metric-cell rounded-lg p-3">
+                    <div className="mb-3 flex items-center justify-between">
+                      <Icon size={14} style={{ color }} />
+                      <span className="font-mono text-[10px] text-white/25">SYNC</span>
+                    </div>
+                    <div className="text-2xl font-black tabular-nums" style={{ color }}>
+                      {value}
+                    </div>
+                    <div className="mt-1 text-xs text-white/40">{label}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="terminal-feed mt-4 rounded-lg p-4 font-mono text-[11px] leading-relaxed">
+                <p><span className="text-[#00d4ff]">ui</span><span className="text-white/35">:</span> React + Next.js</p>
+                <p><span className="text-[#10b981]">api</span><span className="text-white/35">:</span> RTK Query + REST</p>
+                <p><span className="text-[#f59e0b]">data</span><span className="text-white/35">:</span> Node.js + MongoDB</p>
+                <p><span className="text-[#ec4899]">extra</span><span className="text-white/35">:</span> Web3 + SEO</p>
+              </div>
+              <div className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-white/28">
+                <Terminal size={13} className="text-[#10b981]/70" />
+                System ready for handoff
+              </div>
+            </div>
+          </motion.aside>
+        </motion.div>
       </motion.div>
 
       {/* Scroll indicator */}

@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="py-8 border-t border-white/[0.04]">
-      <div className="max-w-6xl mx-auto px-6">
+    <footer className="border-t border-[#00d4ff]/10 py-8">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="font-mono text-xs text-white/25">
-            <span className="text-white/40">&lt;</span>
-            <span className="text-[#00d4ff]/60">nqc</span>
-            <span className="text-white/40">/&gt;</span>
+          <div className="font-mono text-xs uppercase tracking-widest text-white/25">
+            <span className="text-[#00d4ff]/70">nqc</span>
+            <span className="text-white/20">/</span>
+            <span className="text-[#10b981]/70">dev</span>
           </div>
 
           <motion.p

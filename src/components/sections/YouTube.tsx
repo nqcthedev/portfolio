@@ -30,7 +30,9 @@ function ChannelCard({
         delay: index * 0.1,
         ease: EASE,
       }}
-      className="group relative p-5 rounded-2xl border border-white/[0.06] bg-[#111111] hover:border-white/[0.12] transition-all duration-300 overflow-hidden"
+      className="channel-lane future-panel corner-lock group relative overflow-hidden rounded-lg p-5 transition-all duration-300 hover:border-[#f59e0b]/25"
+      style={{ ["--accent" as string]: channel.color, ["--channel-index" as string]: index }}
+      data-mode-match="creator"
     >
       {/* Glow */}
       <div
@@ -40,11 +42,15 @@ function ChannelCard({
         }}
       />
 
-      {/* Top row */}
       <div className="flex items-center justify-between mb-4">
-        <span className="text-2xl">{channel.emoji}</span>
         <span
-          className="px-2 py-0.5 rounded-full text-[10px] font-semibold border"
+          className="metric-cell flex h-10 w-10 items-center justify-center rounded-lg"
+          style={{ color: channel.color }}
+        >
+          <Award size={18} />
+        </span>
+        <span
+          className="px-2 py-0.5 rounded-lg text-[10px] font-semibold border"
           style={{
             borderColor: `${channel.color}30`,
             color: channel.color,
@@ -55,7 +61,6 @@ function ChannelCard({
         </span>
       </div>
 
-      {/* Subscribers - big number */}
       <div
         className="text-3xl font-black mb-0.5 tabular-nums"
         style={{ color: channel.color }}
@@ -64,15 +69,19 @@ function ChannelCard({
       </div>
       <div className="text-xs text-white/30 mb-3">subscribers</div>
 
-      {/* Channel name */}
       <div className="font-semibold text-white/70 text-sm mb-1">{channel.name}</div>
       <div className="font-mono text-xs text-white/30 mb-3">{channel.handle}</div>
 
-      {/* Views */}
       <div className="flex items-center gap-1.5 text-xs text-white/40">
         <Play size={11} fill="currentColor" />
         <span className="font-semibold text-white/60">{channel.views}</span>
         <span>lifetime views</span>
+      </div>
+      <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/[0.05]">
+        <span
+          className="block h-full rounded-full"
+          style={{ width: `${92 - index * 15}%`, background: channel.color }}
+        />
       </div>
     </motion.div>
   );
@@ -83,17 +92,17 @@ export default function YouTube() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="youtube" className="py-28 relative overflow-hidden">
+    <section id="youtube" className="future-section relative overflow-hidden py-28">
       {/* Background accent */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 40% at 50% 50%, rgba(245,158,11,0.03) 0%, transparent 60%)",
+            "linear-gradient(120deg, transparent, rgba(245,158,11,0.045), transparent)",
         }}
       />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div ref={ref}>
           <motion.div
@@ -109,9 +118,9 @@ export default function YouTube() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, ease: EASE }}
-            className="text-3xl sm:text-4xl font-black tracking-tight mb-4"
+            className="mb-4 text-3xl font-black sm:text-4xl"
           >
-            Beyond{" "}
+            Creator{" "}
             <span
               className="font-black"
               style={{
@@ -121,7 +130,7 @@ export default function YouTube() {
                 backgroundClip: "text",
               }}
             >
-              Engineering
+              Engine
             </span>
           </motion.h2>
 
@@ -139,69 +148,71 @@ export default function YouTube() {
           </motion.p>
         </div>
 
-        {/* Channel cards */}
-        <div className="grid sm:grid-cols-3 gap-3 mb-10">
-          {YOUTUBE_CHANNELS.map((channel, i) => (
-            <ChannelCard key={channel.handle} channel={channel} index={i} />
-          ))}
+        <div className="creator-engine-grid">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: EASE }}
+            className="creator-core future-panel corner-lock rounded-lg p-6"
+            data-mode-match="creator"
+          >
+            <div className="creator-reactor">
+              <div className="creator-reactor-ring" />
+              <div className="creator-reactor-ring creator-reactor-ring-two" />
+              <div className="creator-reactor-core">
+                <span>1.65B+</span>
+                <small>views</small>
+              </div>
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+              {[
+                { icon: Award, label: "Play Buttons", value: "3", sub: "Gold + 2 Silver" },
+                { icon: TrendingUp, label: "Retention", value: "High", sub: "avg duration" },
+                { icon: Play, label: "Published", value: "3,000+", sub: "videos" },
+                { icon: TrendingUp, label: "Cadence", value: "~100/wk", sub: "peak ops" },
+              ].map(({ icon: Icon, label, value, sub }) => (
+                <div key={label} className="metric-cell rounded-lg p-4 text-center">
+                  <Icon size={16} className="mx-auto mb-2 text-[#f59e0b]/60" />
+                  <div className="text-xl font-black text-[#f59e0b]/90 mb-0.5">{value}</div>
+                  <div className="text-[10px] font-semibold text-white/40">{label}</div>
+                  <div className="text-[10px] text-white/25">{sub}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <div className="channel-stack">
+            {YOUTUBE_CHANNELS.map((channel, i) => (
+              <ChannelCard key={channel.handle} channel={channel} index={i} />
+            ))}
+          </div>
         </div>
 
-        {/* Combined stats bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, ease: EASE }}
-          className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10"
-        >
-          {[
-            { icon: Award, label: "Play Buttons", value: "3", sub: "Gold + 2× Silver" },
-            { icon: TrendingUp, label: "Avg View Duration", value: "80%+", sub: "retention rate" },
-            { icon: Play, label: "Videos Published", value: "3,000+", sub: "across 3 channels" },
-            { icon: TrendingUp, label: "Peak Cadence", value: "~100/wk", sub: "for 24+ months" },
-          ].map(({ icon: Icon, label, value, sub }) => (
-            <div
-              key={label}
-              className="p-4 rounded-xl border border-white/[0.06] bg-[#111111] text-center"
-            >
-              <Icon size={16} className="mx-auto mb-2 text-[#f59e0b]/60" />
-              <div className="text-xl font-black text-[#f59e0b]/90 mb-0.5">{value}</div>
-              <div className="text-[10px] font-semibold text-white/40">{label}</div>
-              <div className="text-[10px] text-white/25">{sub}</div>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* Workflow */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="workflow-strip mt-6"
         >
-          <p className="text-xs font-bold uppercase tracking-widest text-white/25 mb-4">
-            End-to-End Workflow
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {WORKFLOW_STEPS.map((w, i) => (
-              <motion.div
-                key={w.step}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex gap-3 p-4 rounded-xl border border-white/[0.05] bg-[#0e0e0e]"
-              >
-                <span className="font-mono text-xs font-bold text-[#f59e0b]/40 flex-shrink-0 mt-0.5">
-                  {w.step}
-                </span>
-                <div>
-                  <div className="text-sm font-semibold text-white/70 mb-1">{w.label}</div>
-                  <div className="text-xs text-white/35 leading-relaxed">{w.desc}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {WORKFLOW_STEPS.map((w, i) => (
+            <motion.div
+              key={w.step}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="workflow-node future-panel rounded-lg p-4"
+              data-mode-match="creator builder"
+            >
+              <span className="font-mono text-xs font-bold text-[#f59e0b]/50">
+                {w.step}
+              </span>
+              <div className="mt-2 text-sm font-semibold text-white/70">{w.label}</div>
+              <div className="mt-1 text-xs text-white/35 leading-relaxed">{w.desc}</div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Insight callout */}
@@ -210,7 +221,8 @@ export default function YouTube() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-6 p-6 rounded-2xl border border-[#f59e0b]/15 bg-[#f59e0b]/[0.03]"
+          className="future-panel mt-6 rounded-lg border-[#f59e0b]/15 p-6"
+          data-mode-match="creator recruiter"
         >
           <p className="text-sm text-white/55 leading-relaxed">
             <span className="text-[#f59e0b]/80 font-semibold">Returning to engineering</span>{" "}

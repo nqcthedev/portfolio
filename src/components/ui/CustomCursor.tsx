@@ -43,6 +43,7 @@ export function CustomCursor() {
 
     document.body.appendChild(dot);
     document.body.appendChild(ring);
+    document.documentElement.classList.add("custom-cursor-ready");
 
     let mouseX = -200;
     let mouseY = -200;
@@ -112,6 +113,7 @@ export function CustomCursor() {
       window.removeEventListener("mouseup", onUp);
       document.documentElement.removeEventListener("mouseleave", onLeave);
       document.documentElement.removeEventListener("mouseenter", onEnter);
+      document.documentElement.classList.remove("custom-cursor-ready");
       dot.remove();
       ring.remove();
     };

@@ -17,7 +17,9 @@ function FeaturedProject({ project }: { project: (typeof PROJECTS)[number] }) {
       initial={{ opacity: 0, y: 24 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: EASE }}
-      className="group relative rounded-2xl border border-white/[0.06] bg-[#111111] hover:border-white/[0.12] overflow-hidden transition-all duration-300"
+      className="artifact-bay future-panel corner-lock group relative overflow-hidden rounded-lg transition-all duration-300 hover:border-[#00d4ff]/25"
+      style={{ ["--accent" as string]: project.color }}
+      data-mode-match="builder"
     >
       {/* Color strip */}
       <div
@@ -33,89 +35,101 @@ function FeaturedProject({ project }: { project: (typeof PROJECTS)[number] }) {
         }}
       />
 
-      <div className="p-7 sm:p-8">
-        {/* Featured badge */}
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-2">
-            <Star size={12} style={{ color: project.color }} fill={project.color} />
-            <span
-              className="text-[10px] font-bold uppercase tracking-widest"
-              style={{ color: project.color }}
-            >
-              Featured Project
-            </span>
-          </div>
-          <div className="flex gap-2">
-            {project.github && (
-              <motion.a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-8 h-8 rounded-lg border border-white/[0.08] text-white/40 hover:text-white hover:border-white/20 transition-all"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
+      <div className="relative z-10 grid gap-8 p-7 sm:p-8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div>
+          <div className="mb-5 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Star size={12} style={{ color: project.color }} fill={project.color} />
+              <span
+                className="text-[10px] font-bold uppercase tracking-widest"
+                style={{ color: project.color }}
               >
-                <GithubIcon size={14} />
-              </motion.a>
-            )}
-            {project.live && project.live !== "#" && (
-              <motion.a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-8 h-8 rounded-lg border border-white/[0.08] text-white/40 hover:text-white hover:border-white/20 transition-all"
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ExternalLink size={14} />
-              </motion.a>
-            )}
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Left */}
-          <div>
-            <h3 className="text-2xl font-black text-white/90 mb-2">{project.title}</h3>
-            <p className="text-sm text-white/45 leading-relaxed mb-5">
-              {project.description}
-            </p>
-
-            {/* Stack */}
-            <div className="flex flex-wrap gap-1.5">
-              {project.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2.5 py-1 rounded-lg text-[11px] font-medium border"
-                  style={{
-                    borderColor: `${project.color}25`,
-                    color: `${project.color}99`,
-                    background: `${project.color}08`,
-                  }}
+                Artifact Bay / Featured
+              </span>
+            </div>
+            <div className="flex gap-2">
+              {project.github && (
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-8 h-8 rounded-lg border border-white/[0.08] text-white/40 hover:text-white hover:border-white/20 transition-all"
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {tech}
-                </span>
-              ))}
+                  <GithubIcon size={14} />
+                </motion.a>
+              )}
+              {project.live && project.live !== "#" && (
+                <motion.a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-8 h-8 rounded-lg border border-white/[0.08] text-white/40 hover:text-white hover:border-white/20 transition-all"
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ExternalLink size={14} />
+                </motion.a>
+              )}
             </div>
           </div>
 
-          {/* Right - highlights */}
-          <div>
-            <p className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-3">
-              Highlights
-            </p>
-            <ul className="space-y-2.5">
-              {project.highlights.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm text-white/55">
-                  <span
-                    className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
-                    style={{ background: project.color }}
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <h3 className="mb-3 text-3xl font-black text-white/90">{project.title}</h3>
+          <p className="mb-6 text-sm leading-relaxed text-white/45">
+            {project.description}
+          </p>
+
+          <div className="mb-6 flex flex-wrap gap-1.5">
+            {project.stack.map((tech) => (
+              <span
+                key={tech}
+                className="px-2.5 py-1 rounded-lg text-[11px] font-medium border"
+                style={{
+                  borderColor: `${project.color}25`,
+                  color: `${project.color}99`,
+                  background: `${project.color}08`,
+                }}
+              >
+                {tech}
+              </span>
+            ))}
           </div>
+
+          <ul className="space-y-2.5">
+            {project.highlights.map((item) => (
+              <li key={item} className="flex items-start gap-2.5 text-sm text-white/55">
+                <span
+                  className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                  style={{ background: project.color }}
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="artifact-preview">
+          <div className="artifact-screen">
+            <div className="artifact-screen-top">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div className="artifact-frame">
+              <div className="artifact-media" />
+              <div className="artifact-sidebar">
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+          </div>
+          {["Auth", "i18n", "RTL", "Comments"].map((node, index) => (
+            <span key={node} className={`artifact-node artifact-node-${index}`}>
+              {node}
+            </span>
+          ))}
         </div>
       </div>
     </motion.div>
@@ -139,12 +153,14 @@ function MiniProject({
         delay: index * 0.1,
         ease: EASE,
       }}
-      className="group relative p-5 rounded-2xl border border-white/[0.06] bg-[#111111] hover:border-white/[0.12] overflow-hidden transition-all duration-300"
+      className="artifact-mini future-panel corner-lock group relative overflow-hidden rounded-lg p-5 transition-all duration-300 hover:border-[#00d4ff]/25"
+      style={{ ["--accent" as string]: project.color }}
+      data-mode-match="builder creator"
     >
       <div
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          background: `radial-gradient(ellipse at top left, ${project.color}06 0%, transparent 60%)`,
+          background: `linear-gradient(135deg, ${project.color}08 0%, transparent 60%)`,
         }}
       />
       <h3 className="font-bold text-white/80 mb-2 text-sm">{project.title}</h3>
@@ -177,8 +193,8 @@ export default function Projects() {
   const mini = PROJECTS.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-28 relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="projects" className="future-section relative py-28">
+      <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div ref={ref}>
           <motion.div
@@ -195,10 +211,10 @@ export default function Projects() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: EASE }}
-              className="text-3xl sm:text-4xl font-black tracking-tight"
+              className="text-3xl font-black sm:text-4xl"
             >
-              Selected{" "}
-              <span className="gradient-cyan">Work</span>
+              Product{" "}
+              <span className="quantum-text">Artifacts</span>
             </motion.h2>
             <motion.a
               href="https://github.com/nqcthedev"

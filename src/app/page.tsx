@@ -1,9 +1,8 @@
-"use client";
-
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { FutureOSOverlay } from "@/components/ui/FutureOSOverlay";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
@@ -17,6 +16,7 @@ export default function Home() {
     <main className="relative">
       <CustomCursor />
       <ScrollProgress />
+      <FutureOSOverlay />
       <Navbar />
       <Hero />
       <About />
