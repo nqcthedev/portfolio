@@ -164,7 +164,7 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="future-section relative py-28">
+    <section id="skills" className="future-section relative py-20">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div
@@ -190,7 +190,7 @@ export default function Skills() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.2 }}
-              className="text-sm text-white/30 max-w-xs"
+              className="text-sm text-white/45 max-w-xs"
             >
               3+ years production · daily AI pair programming
             </motion.p>

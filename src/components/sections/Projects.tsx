@@ -193,7 +193,7 @@ export default function Projects() {
   const mini = PROJECTS.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="future-section relative py-28">
+    <section id="projects" className="future-section relative py-20">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div ref={ref}>

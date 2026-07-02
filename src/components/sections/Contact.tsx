@@ -114,7 +114,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contact" className="future-section relative py-28">
+    <section id="contact" className="future-section relative py-20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="transmission-console future-panel corner-lock rounded-lg p-6 sm:p-8" data-mode-match="recruiter">
           {/* Header */}
@@ -143,7 +143,7 @@ export default function Contact() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.2 }}
-              className="text-white/40 text-base leading-relaxed mb-10"
+              className="text-white/55 text-base leading-relaxed mb-10"
             >
               Currently open to full-time engineering roles and select freelance
               projects. If you have something worth building, I&apos;d love to hear

@@ -7,7 +7,7 @@ export const size = {
 
 export const contentType = "image/png";
 
-const stack = ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "AI Workflow"];
+const stack = ["React", "Next.js", "TypeScript", "Node.js", "AI SDK", "TanStack Query"];
 
 export default function Image() {
   return new ImageResponse(
@@ -92,7 +92,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            NQC / Fullstack JavaScript Developer
+            NQC / Front-End Developer — React · Next.js
           </div>
 
           <div
@@ -127,8 +127,8 @@ export default function Image() {
               lineHeight: 1.32,
             }}
           >
-            React / Next.js, Node.js, MongoDB, Web3, AI-native workflow, and
-            product signal from 1.8M+ YouTube subscribers.
+            React / Next.js, TypeScript, Node.js, AI engineering — streaming
+            LLM UIs — plus product signal from 1.8M+ YouTube subscribers.
           </div>
 
           <div style={{ marginTop: 42, display: "flex", gap: 12, flexWrap: "wrap" }}>

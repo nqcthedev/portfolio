@@ -7,10 +7,10 @@ import { YOUTUBE_CHANNELS } from "@/lib/data";
 import { EASE } from "@/lib/utils";
 
 const WORKFLOW_STEPS = [
-  { step: "01", label: "Script Writing", desc: "Original scripts in Vietnamese optimized for TTS delivery" },
-  { step: "02", label: "AI Voice", desc: "CapCut text-to-speech production + custom audio design" },
+  { step: "01", label: "AI Scripting", desc: "Original scripts drafted with OpenAI / Gemini, optimized for TTS delivery" },
+  { step: "02", label: "TTS Pipeline", desc: "Automated text-to-speech voice-over production + custom audio design" },
   { step: "03", label: "Video Editing", desc: "Adaptive editing over curated short-form source footage" },
-  { step: "04", label: "SEO Publishing", desc: "Thumbnail A/B tests, title optimization, analytics review" },
+  { step: "04", label: "Data Loop", desc: "Thumbnail A/B tests, title optimization, retention / CTR analytics" },
 ];
 
 function ChannelCard({
@@ -92,7 +92,7 @@ export default function YouTube() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="youtube" className="future-section relative overflow-hidden py-28">
+    <section id="youtube" className="future-section relative overflow-hidden py-20">
       {/* Background accent */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -138,11 +138,12 @@ export default function YouTube() {
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.2 }}
-            className="text-white/40 text-base leading-relaxed max-w-2xl mb-10"
+            className="text-white/55 text-base leading-relaxed max-w-2xl mb-10"
           >
-            For 16 months, I stepped back from engineering to build 3 independent YouTube channels
-            from scratch — operating as scriptwriter, editor, SEO strategist, and product owner
-            simultaneously. The result: <span className="text-white/70">1.8M+ subscribers</span>,{" "}
+            Since Dec 2024, I&apos;ve run 3 independent YouTube channels as founder &amp; solo
+            developer — writing the automation, not just the scripts: an AI-assisted pipeline
+            (OpenAI &amp; Gemini APIs, TTS) covering scripting, voice-over, and publishing.
+            The result: <span className="text-white/70">1.8M+ subscribers</span>,{" "}
             <span className="text-white/70">1.65B+ views</span>, one Gold Play Button, and
             product intuition you can&apos;t learn in a classroom.
           </motion.p>

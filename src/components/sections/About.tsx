@@ -82,7 +82,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="future-section relative py-28">
+    <section id="about" className="future-section relative py-20">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           ref={ref}
@@ -119,29 +119,27 @@ export default function About() {
               >
                 <p>
                   I&apos;m a{" "}
-                  <span className="text-white/80">Fullstack JavaScript Developer</span>{" "}
+                  <span className="text-white/80">Front-End Developer (React / Next.js / TypeScript)</span>{" "}
                   with 3 years shipping production web apps — from blockchain P2P
-                  exchanges to real-estate platforms and B2B SaaS. I specialize in
-                  the{" "}
-                  <span className="text-white/80">React / Next.js ecosystem</span>{" "}
-                  with Node.js backends.
+                  exchanges to real-estate platforms and B2B SaaS — plus working{" "}
+                  <span className="text-white/80">Node.js / Express / MongoDB</span>{" "}
+                  for end-to-end delivery.
                 </p>
                 <p>
-                  Over the past 16 months, I stepped back from engineering to build
-                  and operate{" "}
-                  <span className="text-white/80">3 independent YouTube channels</span>{" "}
-                  from zero — reaching a combined{" "}
+                  Since Dec 2024, I&apos;ve run an independent content venture as{" "}
+                  <span className="text-white/80">founder &amp; solo developer</span> —
+                  building an AI-assisted production pipeline (OpenAI &amp; Gemini APIs, TTS)
+                  that powers 3 YouTube channels with{" "}
                   <span className="text-[#f59e0b]/90 font-semibold">1.8M+ subscribers</span>{" "}
                   and{" "}
                   <span className="text-[#9333ea]/90 font-semibold">1.65B+ lifetime views</span>.
                   One channel earned the Gold Play Button.
                 </p>
                 <p>
-                  Now returning to full-time engineering with both strong technical
-                  fundamentals and rare{" "}
-                  <span className="text-white/80">product intuition</span> — audience
-                  analytics, A/B-tested iteration, and data-driven decision making at
-                  scale.
+                  The pipeline now runs largely automated, so I&apos;m bringing that{" "}
+                  <span className="text-white/80">AI engineering + product intuition</span>{" "}
+                  — audience analytics, A/B-tested iteration, data-driven decisions at
+                  scale — back into full-time frontend work.
                 </p>
               </motion.div>
 
@@ -186,8 +184,9 @@ export default function About() {
                   <div className="space-y-3">
                     {[
 	                      ["Frontend", "React, Next.js, TypeScript, Tailwind CSS"],
-	                      ["State & data", "Redux Toolkit, RTK Query, React Hook Form"],
+	                      ["State & data", "TanStack Query, Redux Toolkit, RTK Query, Zustand"],
 	                      ["Backend", "Node.js, Express.js, MongoDB, JWT auth"],
+	                      ["AI engineering", "OpenAI & Gemini APIs, TTS pipeline, Claude Code / Codex"],
 	                      ["Specialized", "Web3.js, Ethers.js, Socket.io, wallet auth, SEO"],
                     ].map(([label, value]) => (
                       <div key={label} className="metric-cell rounded-lg p-3">

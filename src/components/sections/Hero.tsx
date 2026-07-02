@@ -26,10 +26,10 @@ import { PortfolioModeSwitch } from "@/components/ui/PortfolioModeSwitch";
 import { EASE } from "@/lib/utils";
 
 const ROLES = [
+  "Front-End Developer — React / Next.js",
   "Fullstack JavaScript Developer",
-  "React / Next.js Developer",
-  "Frontend Engineer with Node.js",
-  "Product-minded Web Developer",
+  "AI-native Product Engineer",
+  "Founder & Solo Developer",
 ];
 
 const SOCIAL = [
@@ -46,9 +46,9 @@ const TELEMETRY = [
 
 const STACK_MODULES = [
   { label: "Frontend", value: "React, Next.js, TypeScript", color: "#00d4ff" },
-  { label: "State / API", value: "Redux Toolkit, RTK Query, REST", color: "#10b981" },
+  { label: "State / API", value: "TanStack Query, RTK Query, Zustand", color: "#10b981" },
   { label: "Backend", value: "Node.js, Express.js, MongoDB", color: "#f59e0b" },
-  { label: "Specialized", value: "Web3.js, Ethers.js, Socket.io", color: "#ec4899" },
+  { label: "AI / Realtime", value: "AI SDK, OpenAI & Gemini, Socket.io", color: "#ec4899" },
 ];
 
 const PROTOCOLS = ["Ship", "Measure", "Automate", "Scale"];
@@ -56,8 +56,8 @@ const PROTOCOLS = ["Ship", "Measure", "Automate", "Scale"];
 const MEMORY_STREAM = [
   "React / Next.js",
   "Node / MongoDB",
+  "AI SDK / LLM streaming",
   "Web3 / Socket.io",
-  "Firebase / Vercel",
 ];
 
 function TypewriterText({ texts }: { texts: string[] }) {
@@ -206,7 +206,7 @@ export default function Hero() {
               <div className="chrono-ring chrono-ring-secondary" />
               <div className="relative z-10">
 	                <p className="mx-auto mb-3 max-w-full px-1 font-mono text-[10px] uppercase leading-relaxed tracking-[0.28em] text-[#00d4ff]/70 sm:mb-4 sm:text-xs">
-	                  React / Next.js · TypeScript · Node.js · MongoDB
+	                  React / Next.js · TypeScript · Node.js · AI Engineering
 	                </p>
 	                <h1 className="text-5xl font-black leading-none sm:text-7xl lg:text-7xl xl:text-8xl">
 	                  <span className="block max-w-full whitespace-nowrap text-white/90">
@@ -229,12 +229,14 @@ export default function Hero() {
               variants={itemVariants}
               className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-white/50"
             >
-              Fullstack JavaScript Developer shipping production web apps with{" "}
-              <span className="text-white/78">React, Next.js, TypeScript</span>,{" "}
-              <span className="text-white/78">Node.js, Express, MongoDB</span>, plus Web3
-              and real-time interfaces. Also built YouTube channels from zero to{" "}
-              <span className="font-semibold text-[#f59e0b]">1.8M subscribers</span>,
-              bringing real product analytics back into frontend work.
+              Front-End Developer shipping production web apps with{" "}
+              <span className="text-white/78">React, Next.js, TypeScript</span> and
+              fullstack{" "}
+              <span className="text-white/78">Node.js, Express, MongoDB</span>. Currently
+              founder &amp; solo developer of an AI-automated content venture —{" "}
+              <span className="font-semibold text-[#f59e0b]">1.8M subscribers</span> grown
+              on an OpenAI / Gemini-powered pipeline — bringing real product analytics
+              back into frontend work.
             </motion.p>
 
 	            <motion.div
@@ -351,9 +353,9 @@ export default function Hero() {
               </div>
               <div className="terminal-feed mt-4 rounded-lg p-4 font-mono text-[11px] leading-relaxed">
                 <p><span className="text-[#00d4ff]">ui</span><span className="text-white/35">:</span> React + Next.js</p>
-                <p><span className="text-[#10b981]">api</span><span className="text-white/35">:</span> RTK Query + REST</p>
+                <p><span className="text-[#10b981]">api</span><span className="text-white/35">:</span> TanStack Query + REST</p>
                 <p><span className="text-[#f59e0b]">data</span><span className="text-white/35">:</span> Node.js + MongoDB</p>
-                <p><span className="text-[#ec4899]">extra</span><span className="text-white/35">:</span> Web3 + SEO</p>
+                <p><span className="text-[#ec4899]">ai</span><span className="text-white/35">:</span> AI SDK + LLM streaming</p>
               </div>
               <div className="mt-4 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-white/28">
                 <Terminal size={13} className="text-[#10b981]/70" />

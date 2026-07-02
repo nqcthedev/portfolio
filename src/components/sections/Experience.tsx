@@ -70,7 +70,7 @@ function ExperienceCard({
         </div>
 
         {/* Description */}
-        <p className="text-sm text-white/35 mb-4">{exp.description}</p>
+        <p className="text-sm text-white/55 mb-4">{exp.description}</p>
 
         <ul className="space-y-1.5 mb-5">
           {exp.highlights.map((item) => (
@@ -109,7 +109,7 @@ export default function Experience() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="future-section relative py-28">
+    <section id="experience" className="future-section relative py-20">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div ref={ref}>
@@ -138,7 +138,7 @@ export default function Experience() {
               transition={{ delay: 0.2 }}
               className="signal-chip rounded-full px-3 py-1 text-sm text-white/45"
             >
-              Dec 2021 – Sep 2024
+              Dec 2021 – Present
             </motion.p>
           </div>
         </div>
