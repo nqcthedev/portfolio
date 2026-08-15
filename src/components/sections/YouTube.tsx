@@ -226,8 +226,8 @@ export default function YouTube() {
           data-mode-match="creator recruiter"
         >
           <p className="text-sm text-white/55 leading-relaxed">
-            <span className="text-[#f59e0b]/80 font-semibold">Returning to engineering</span>{" "}
-            with rare product skills earned at scale: audience analytics, A/B-tested iteration,
+            <span className="text-[#f59e0b]/80 font-semibold">Why this matters for engineering</span>{" "}
+            — rare product skills earned at scale: audience analytics, A/B-tested iteration,
             data-driven decision-making, and the ability to operate autonomously under performance
             pressure — all of which I bring directly to frontend and product work.
           </p>

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Nguyen Quoc Cuong",
   },
   description:
-    "Front-End Developer specializing in React, Next.js (App Router / Server Components), TypeScript, with fullstack Node.js / MongoDB and AI engineering — streaming LLM UIs, OpenAI & Gemini integration. 3 years production experience plus founder of an AI-automated content venture with 1.8M+ YouTube subscribers.",
+    "Full-Stack Developer specializing in React, Next.js (App Router / Server Components), TypeScript, with Node.js / Express / MongoDB and AI engineering — streaming LLM UIs, OpenAI & Gemini integration. 3+ years production experience across blockchain, real-estate and B2B SaaS, currently freelancing in Ho Chi Minh City.",
   applicationName: "Nguyen Quoc Cuong Portfolio",
   keywords: [
     "Nguyen Quoc Cuong",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nguyen Quoc Cuong — Full-Stack Developer (React / Next.js / TypeScript / Node.js)",
     description:
-      "React / Next.js developer with fullstack Node.js, AI engineering (streaming LLM UIs, OpenAI & Gemini), and proven product signal from 1.8M+ YouTube subscribers.",
+      "Full-Stack Developer — React / Next.js / TypeScript with Node.js, plus AI engineering (streaming LLM UIs, OpenAI & Gemini). 3+ years production experience.",
     type: "website",
     locale: "en_US",
     url: "/",
