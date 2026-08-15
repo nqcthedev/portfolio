@@ -26,10 +26,10 @@ import { PortfolioModeSwitch } from "@/components/ui/PortfolioModeSwitch";
 import { EASE } from "@/lib/utils";
 
 const ROLES = [
-  "Front-End Developer — React / Next.js",
-  "Fullstack JavaScript Developer",
+  "Full-Stack Developer — React / Next.js",
+  "Front-End Engineer with Node.js",
   "AI-native Product Engineer",
-  "Founder & Solo Developer",
+  "Freelance Developer",
 ];
 
 const SOCIAL = [
@@ -229,14 +229,13 @@ export default function Hero() {
               variants={itemVariants}
               className="mx-auto mb-6 max-w-2xl text-base leading-relaxed text-white/50"
             >
-              Front-End Developer shipping production web apps with{" "}
-              <span className="text-white/78">React, Next.js, TypeScript</span> and
-              fullstack{" "}
+              Full-Stack Developer shipping production web apps with{" "}
+              <span className="text-white/78">React, Next.js, TypeScript</span> and{" "}
               <span className="text-white/78">Node.js, Express, MongoDB</span>. Currently
-              founder &amp; solo developer of an AI-automated content venture —{" "}
-              <span className="font-semibold text-[#f59e0b]">1.8M subscribers</span> grown
-              on an OpenAI / Gemini-powered pipeline — bringing real product analytics
-              back into frontend work.
+              freelancing for SME clients while running an AI-automated pipeline that
+              serves my own media properties at{" "}
+              <span className="font-semibold text-[#f59e0b]">1.8M subscribers</span> —
+              bringing real product analytics back into engineering work.
             </motion.p>
 
 	            <motion.div

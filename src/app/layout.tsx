@@ -24,7 +24,7 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Nguyen Quoc Cuong — Front-End Developer (React / Next.js / TypeScript)",
+    default: "Nguyen Quoc Cuong — Full-Stack Developer (React / Next.js / TypeScript / Node.js)",
     template: "%s | Nguyen Quoc Cuong",
   },
   description:
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   applicationName: "Nguyen Quoc Cuong Portfolio",
   keywords: [
     "Nguyen Quoc Cuong",
+    "Full-Stack Developer",
     "Front-End Developer",
-    "Fullstack Developer",
     "JavaScript",
     "TypeScript",
     "React",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Nguyen Quoc Cuong — Front-End Developer (React / Next.js / TypeScript)",
+    title: "Nguyen Quoc Cuong — Full-Stack Developer (React / Next.js / TypeScript / Node.js)",
     description:
       "React / Next.js developer with fullstack Node.js, AI engineering (streaming LLM UIs, OpenAI & Gemini), and proven product signal from 1.8M+ YouTube subscribers.",
     type: "website",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nguyen Quoc Cuong — Front-End Developer (React / Next.js / TypeScript)",
+    title: "Nguyen Quoc Cuong — Full-Stack Developer (React / Next.js / TypeScript / Node.js)",
     description:
       "React / Next.js developer with production experience, AI engineering, and creator-scale product signal.",
   },

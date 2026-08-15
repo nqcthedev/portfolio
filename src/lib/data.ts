@@ -67,19 +67,19 @@ export const SKILLS = {
 
 export const EXPERIENCES = [
   {
-    company: "Independent Content Venture",
-    role: "Founder & Solo Developer",
+    company: "Freelance / Self-employed",
+    role: "Full-Stack Developer",
     period: "Dec 2024 – Present",
-    location: "Remote, VN",
-    project: "AI Content Automation",
+    location: "Ho Chi Minh City, VN",
+    project: "Client projects & AI automation",
     description:
-      "Self-built AI production pipeline powering three YouTube channels",
-    stack: ["OpenAI API", "Gemini API", "TTS", "Automation Scripts", "YouTube Analytics"],
+      "Independent full-stack delivery for SME clients, plus self-built AI tooling",
+    stack: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "OpenAI API", "Gemini API"],
     highlights: [
-      "Built AI-assisted pipeline (OpenAI & Gemini + TTS): scripting → voice-over → publishing",
-      "Grew 3 channels from zero to 1.8M+ subscribers / 1.65B+ views — Gold + 2 Silver Play Buttons",
-      "Operated as a data-driven product: A/B-tested thumbnails & titles, retention / CTR funnels",
-      "Pipeline now runs largely automated — returning to full-time engineering",
+      "Delivered marketing sites & business web apps end-to-end (dashboards, CRUD, API integrations)",
+      "Owned full cycle: scoping with non-technical clients → UI → REST APIs → deploy → maintenance",
+      "Built an AI content-automation pipeline (Node.js + OpenAI/Gemini + TTS) with multi-provider fallback",
+      "Pipeline serves own media properties at 1.8M+ subscriber scale",
     ],
     color: "#f59e0b",
   },

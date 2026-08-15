@@ -119,27 +119,27 @@ export default function About() {
               >
                 <p>
                   I&apos;m a{" "}
-                  <span className="text-white/80">Front-End Developer (React / Next.js / TypeScript)</span>{" "}
-                  with 3 years shipping production web apps — from blockchain P2P
-                  exchanges to real-estate platforms and B2B SaaS — plus working{" "}
-                  <span className="text-white/80">Node.js / Express / MongoDB</span>{" "}
+                  <span className="text-white/80">Full-Stack Developer (React / Next.js / TypeScript / Node.js)</span>{" "}
+                  with 3+ years shipping production web apps — from blockchain P2P
+                  exchanges to real-estate platforms and B2B SaaS — front-end leaning,
+                  with <span className="text-white/80">Node.js / Express / MongoDB</span>{" "}
                   for end-to-end delivery.
                 </p>
                 <p>
-                  Since Dec 2024, I&apos;ve run an independent content venture as{" "}
-                  <span className="text-white/80">founder &amp; solo developer</span> —
-                  building an AI-assisted production pipeline (OpenAI &amp; Gemini APIs, TTS)
-                  that powers 3 YouTube channels with{" "}
+                  Since Dec 2024 I&apos;ve worked{" "}
+                  <span className="text-white/80">independently</span> — delivering client
+                  projects end-to-end (marketing sites, dashboards, API integrations) and
+                  building an AI content-automation pipeline (OpenAI &amp; Gemini APIs, TTS)
+                  that serves my own media properties at{" "}
                   <span className="text-[#f59e0b]/90 font-semibold">1.8M+ subscribers</span>{" "}
                   and{" "}
                   <span className="text-[#9333ea]/90 font-semibold">1.65B+ lifetime views</span>.
-                  One channel earned the Gold Play Button.
                 </p>
                 <p>
-                  The pipeline now runs largely automated, so I&apos;m bringing that{" "}
+                  What I bring:{" "}
                   <span className="text-white/80">AI engineering + product intuition</span>{" "}
                   — audience analytics, A/B-tested iteration, data-driven decisions at
-                  scale — back into full-time frontend work.
+                  scale — on top of solid engineering fundamentals.
                 </p>
               </motion.div>
 

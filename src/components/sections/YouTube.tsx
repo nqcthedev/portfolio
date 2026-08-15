@@ -140,9 +140,9 @@ export default function YouTube() {
             transition={{ delay: 0.2 }}
             className="text-white/55 text-base leading-relaxed max-w-2xl mb-10"
           >
-            Since Dec 2024, I&apos;ve run 3 independent YouTube channels as founder &amp; solo
-            developer — writing the automation, not just the scripts: an AI-assisted pipeline
-            (OpenAI &amp; Gemini APIs, TTS) covering scripting, voice-over, and publishing.
+            Alongside client work, I run 3 independent YouTube channels — writing the
+            automation, not just the scripts: an AI-assisted pipeline (OpenAI &amp; Gemini
+            APIs, TTS) covering scripting, voice-over, and publishing.
             The result: <span className="text-white/70">1.8M+ subscribers</span>,{" "}
             <span className="text-white/70">1.65B+ views</span>, one Gold Play Button, and
             product intuition you can&apos;t learn in a classroom.

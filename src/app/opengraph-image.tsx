@@ -92,7 +92,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            NQC / Front-End Developer — React · Next.js
+            NQC / Full-Stack Developer — React · Next.js · Node.js
           </div>
 
           <div
