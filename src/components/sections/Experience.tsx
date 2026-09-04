@@ -166,7 +166,7 @@ export default function Experience() {
               <div className="flex flex-wrap items-start justify-between gap-3 mb-2">
                 <div>
                   <span className="text-xs font-bold text-[#6366f1]/80 uppercase tracking-wider">
-                    Freelance
+                    Side project
                   </span>
                   <h3 className="font-bold text-white/70 text-sm mt-0.5">
                     Entertainment Blog Platform

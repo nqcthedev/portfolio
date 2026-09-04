@@ -67,25 +67,25 @@ export const SKILLS = {
 
 export const EXPERIENCES = [
   {
-    company: "Freelance / Self-employed",
-    role: "Full-Stack Developer",
+    company: "Self-employed — AI Content Automation",
+    role: "Founder & Developer (solo)",
     period: "Dec 2024 – Present",
     location: "Ho Chi Minh City, VN",
-    project: "Client projects & AI automation",
+    project: "AI content-production pipeline",
     description:
-      "Independent full-stack delivery for SME clients, plus self-built AI tooling",
-    stack: ["React", "Next.js", "TypeScript", "Node.js", "MongoDB", "OpenAI API", "Gemini API"],
+      "Solo-built AI automation product, operated as a revenue-generating business",
+    stack: ["Node.js", "TypeScript", "OpenAI API", "Gemini API", "TTS"],
     highlights: [
-      "Delivered marketing sites & business web apps end-to-end (dashboards, CRUD, API integrations)",
-      "Owned full cycle: scoping with non-technical clients → UI → REST APIs → deploy → maintenance",
-      "Built an AI content-automation pipeline (Node.js + OpenAI/Gemini + TTS) with multi-provider fallback",
-      "Pipeline serves own media properties at 1.8M+ subscriber scale",
+      "Designed & built an end-to-end pipeline: LLM scripting (OpenAI/Gemini) → TTS voice-over → scheduled batch runs → multi-provider fallback",
+      "Operated as a product: 3 YouTube properties, 1.8M+ subscribers, 3,000+ videos at ~100/week peak, $20K+ revenue",
+      "Owned the full lifecycle solo — architecture, prompt engineering, token-cost monitoring, incident handling",
+      "Iteration driven by retention / CTR analytics; daily AI-assisted workflow (Claude Code, Codex)",
     ],
     color: "#f59e0b",
   },
   {
     company: "Playground Ltd.",
-    role: "Full-stack Developer",
+    role: "Full-Stack Developer",
     period: "Sep 2023 – Sep 2024",
     location: "Ho Chi Minh City, VN",
     project: "Blockchain P2P Exchange",

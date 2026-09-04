@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Nguyen Quoc Cuong",
   },
   description:
-    "Full-Stack Developer specializing in React, Next.js (App Router / Server Components), TypeScript, with Node.js / Express / MongoDB and AI engineering — streaming LLM UIs, OpenAI & Gemini integration. 3+ years production experience across blockchain, real-estate and B2B SaaS, currently freelancing in Ho Chi Minh City.",
+    "Full-Stack Developer specializing in React, Next.js (App Router / Server Components), TypeScript, with Node.js / Express / MongoDB and AI engineering — streaming LLM UIs, OpenAI & Gemini integration. 3+ years production experience across blockchain, real-estate and B2B SaaS; currently building a solo AI automation product in Ho Chi Minh City.",
   applicationName: "Nguyen Quoc Cuong Portfolio",
   keywords: [
     "Nguyen Quoc Cuong",
