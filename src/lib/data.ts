@@ -69,7 +69,7 @@ export const EXPERIENCES = [
   {
     company: "Self-employed — AI Content Automation",
     role: "Founder & Developer (solo)",
-    period: "Dec 2024 – Present",
+    period: "Jan 2025 – Present",
     location: "Ho Chi Minh City, VN",
     project: "AI content-production pipeline",
     description:

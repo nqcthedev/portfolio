@@ -126,11 +126,10 @@ export default function About() {
                   for end-to-end delivery.
                 </p>
                 <p>
-                  Since Dec 2024 I&apos;ve worked{" "}
-                  <span className="text-white/80">independently</span> — delivering client
-                  projects end-to-end (marketing sites, dashboards, API integrations) and
-                  building an AI content-automation pipeline (OpenAI &amp; Gemini APIs, TTS)
-                  that serves my own media properties at{" "}
+                  Since Jan 2025 I&apos;ve built and operated an{" "}
+                  <span className="text-white/80">AI content-automation product</span> solo —
+                  an end-to-end pipeline (Node.js, OpenAI &amp; Gemini APIs, TTS) that scripts,
+                  voices and publishes content for my own media properties at{" "}
                   <span className="text-[#f59e0b]/90 font-semibold">1.8M+ subscribers</span>{" "}
                   and{" "}
                   <span className="text-[#9333ea]/90 font-semibold">1.65B+ lifetime views</span>.
