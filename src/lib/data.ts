@@ -29,7 +29,6 @@ export const SKILLS = {
     "React Hook Form",
     "Material-UI / Ant Design",
     "Jest / Vitest / RTL",
-    "Playwright (E2E)",
     "JWT Auth",
   ],
   devops: [
@@ -67,19 +66,19 @@ export const SKILLS = {
 
 export const EXPERIENCES = [
   {
-    company: "Self-employed — AI Content Automation",
-    role: "Founder & Developer (solo)",
+    company: "Self-employed",
+    role: "Freelance Full-Stack Developer & Founder",
     period: "Jan 2025 – Present",
     location: "Ho Chi Minh City, VN",
-    project: "AI content-production pipeline",
+    project: "AI Content Automation · Entertainment Blog",
     description:
-      "Solo-built AI automation product, operated as a revenue-generating business",
-    stack: ["Node.js", "TypeScript", "OpenAI API", "Gemini API", "TTS"],
+      "Two self-built products, both revenue / traffic-generating",
+    stack: ["Next.js", "Node.js", "TypeScript", "MongoDB", "OpenAI API", "Gemini API", "TTS"],
     highlights: [
-      "Designed & built an end-to-end pipeline: LLM scripting (OpenAI/Gemini) → TTS voice-over → scheduled batch runs → multi-provider fallback",
-      "Operated as a product: 3 YouTube properties, 1.8M+ subscribers, 3,000+ videos at ~100/week peak, $20K+ revenue",
-      "Owned the full lifecycle solo — architecture, prompt engineering, token-cost monitoring, incident handling",
-      "Iteration driven by retention / CTR analytics; daily AI-assisted workflow (Claude Code, Codex)",
+      "AI Content Automation: end-to-end pipeline — LLM scripting (OpenAI/Gemini) → TTS → scheduled runs → multi-provider fallback",
+      "Operated as a product: 3 YouTube properties, 1.8M+ subscribers, 3,000+ videos, $20K+ revenue",
+      "Entertainment Blog: Next.js 14 + Node + MongoDB, 10k+ monthly visitors, 10 keywords Google page 1, +30% organic",
+      "AI-native workflow: Claude Code + Codex daily for scaffolding, refactoring, debugging; prompt engineering and OpenAI-vs-Gemini evaluation in production",
     ],
     color: "#f59e0b",
   },

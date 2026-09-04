@@ -29,7 +29,7 @@ const ROLES = [
   "Full-Stack Developer — React / Next.js",
   "Front-End Engineer with Node.js",
   "AI-native Product Engineer",
-  "Solo Founder & Developer",
+  "Freelance Developer & Founder",
 ];
 
 const SOCIAL = [

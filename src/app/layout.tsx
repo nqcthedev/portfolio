@@ -48,7 +48,6 @@ export const metadata: Metadata = {
     "AI Native Developer",
     "OpenAI Codex",
     "Claude Code",
-    "Playwright",
     "Portfolio",
   ],
   authors: [{ name: "Nguyen Quoc Cuong", url: "https://github.com/nqcthedev" }],

@@ -172,7 +172,7 @@ export default function Experience() {
                     Entertainment Blog Platform
                   </h3>
                 </div>
-                <span className="font-mono text-xs text-white/25">Oct 2023 – Dec 2024</span>
+                <span className="font-mono text-xs text-white/25">Oct 2023 – Jan 2025</span>
               </div>
               <p className="text-xs text-white/35 mb-3">
                 Next.js 14 + Node.js + MongoDB · 10k+ monthly visitors · 10 Google page-1 keywords · organic traffic improvement
